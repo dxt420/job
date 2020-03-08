@@ -1,0 +1,18 @@
+#a program that acepts input, computes the inputs n displays it and then errors are also handle.
+
+try:
+	num1 = int("enter the number 1")
+	num2 = int("enter the number 2")
+	results = num1/num2
+	print("the answer is:"results)	
+
+except:
+	print("invalid value was entered")
+
+finally:
+	print("the 1st num was:"num1)
+	print("of type:" type(num1))
+	print("the 2nd num was:" num2)
+	print("of type:" type(num2))
+
+print(num1"+"num2"="results)

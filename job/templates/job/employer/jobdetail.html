@@ -1,0 +1,93 @@
+{% extends 'job/employer/base.html' %}
+{% load static %}
+
+{% block content %}
+
+	<section class="overlape">
+		<div class="block no-padding">
+			<div data-velocity="-.1" style="background: url(/static/job/images/resource/mslider1.jpg) repeat scroll 50% 422.28px transparent;" class="parallax scrolly-invisible no-parallax"></div><!-- PARALLAX BACKGROUND IMAGE -->
+			<div class="container fluid">
+				<div class="row">
+					<div class="col-lg-12">
+						<div class="inner-header">
+							<h3>{{job.title}}</h3>
+							<div class="job-statistic">
+								<span>{{job.jobtype}}</span>
+								<p><i class="la la-map-marker"></i>{{job.city}} </p>
+								<p><i class="la la-calendar-o"></i>Posted {{job.date_created}}</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	
+
+	<section>
+		<div class="block">
+			<div class="container">
+				<div class="row">
+				 	<div class="col-lg-8 column">
+				 		<div class="job-single-sec">
+				 			<div class="job-single-head">
+				 				              
+
+                                 <div class="job-thumb"> <img src="{{job.company.logo.url}}" alt="" /></div>
+							 				<div class="job-single-info3">
+							 					<h3>{{job.title}}</h3>
+							 					<span><i class="la la-map-marker"></i>{{job.city}}</span><span class="job-is ft">{{job.jobtype}}</span>
+							 					<ul class="tags-jobs">
+								 					<li><i class="la la-calendar-o"></i> Post Date: {{job.date_created}}</li>
+													 <br>
+
+													 <li><i class="la la-thumb-tack"></i> <b>Shortlist Limit: {{job.people}}</b></li>
+                                                 </ul>
+                                                 
+                                                 
+                                             </div>
+				 			</div><!-- Job Head -->
+				 			<div class="job-details">
+				 				<h3>Job Description</h3>
+				 				<p>{{job.description}}</p>
+				 				<h3>Required Knowledge, Skills, and Abilities</h3>
+								 <p>
+										{{job.skills2}}
+ 
+									
+									</p>
+
+				 			
+				 				<h3>Education + Experience</h3>
+				 				<p>
+										{{job.exp2}}
+								</p>
+				 			</div>
+				 			
+				 		
+				 		</div>
+				 	</div>
+				 	<div class="col-lg-4 column">
+
+				 	
+				 		<div class="job-overview">
+				 			<h3>Job Overview</h3>
+				 			<ul>
+				 				<li><i class="la la-money"></i><h3>Offerd Salary</h3><span>{{job.offered_salary}}</span></li>
+				 				<li><i class="la la-mars-double"></i><h3>Gender</h3><span>{{job.gender}}</span></li>
+				 				<li><i class="la la-thumb-tack"></i><h3>Deadline Level</h3><span>{{job.deadline}}</span></li>
+				 				<li><i class="la la-puzzle-piece"></i><h3>Industry</h3><span>{{job.jobindustry}}</span></li>
+				 				<li><i class="la la-shield"></i><h3>Experience</h3><span>{{job.exp}}</span></li>
+				 				<li><i class="la la-line-chart "></i><h3>Qualification</h3><span> {{job.qualification}}</span></li>
+				 			</ul>
+				 		</div><!-- Job Overview -->
+				
+				 	</div>
+				</div>
+			</div>
+		</div>
+    </section>
+    
+    {% endblock content %}
+
+

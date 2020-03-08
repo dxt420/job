@@ -1,0 +1,2 @@
+and, else, elif, asserrt, continue, break, from, for, or, as, true, false, in,lambda, except, try, def, del, 
+pass, not, 

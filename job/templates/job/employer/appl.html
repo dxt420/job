@@ -1,0 +1,243 @@
+{% extends 'job/employer/base.html' %}
+{% load static %}
+
+{% block content %}
+
+	<section class="overlape">
+		<div class="block no-padding">
+			<div data-velocity="-.1" style="background: url({% static 'job/images/resource/mslider1.jpg' %}) repeat scroll 50% 422.28px transparent;" class="parallax scrolly-invisible no-parallax"></div><!-- PARALLAX BACKGROUND IMAGE -->
+			<div class="container fluid">
+				<div class="row">
+					<div class="col-lg-12">
+						<div class="inner-header">
+							<div class="container">
+								<div class="row">
+									
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section class="overlape">
+		<div class="block remove-top">
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-12">
+						<div class="cand-single-user">
+							<div class="share-baar ciarcle">
+				 				<a href="#" title="" class="share-goaogle"></a><a href="#" title="" class="sharea-fb"></a>
+							 </div>
+							
+				 			<div class="can-detail-s">
+				 				<div class="cst"><img style="height:135px" src="{{s.usericon.url}}" alt="" /></div>
+								 <h3>{{s.user.last_name}} {{s.user.first_name}}</h3>
+								
+				 				<span>{{s.gender}}</span>
+				 				<p><a href="#" class="__cf_email__" >{{s.email}}</a></p>
+				 			
+								
+
+								 <p><i></i><b>{{cgpa}}</b></p>
+								{% if a.status %}
+								 		<p><a class="btn btn-success" style="color:blue" href="javascript:void(0);" >Approved <i class="la la-check"></i> </a></p>
+								{% elif a.limit_reached %}
+										<p><a class="btn btn-info" href="javascript:void(0);" >Limit Exceeded </a></p>
+								{% else %}
+									<p><a class="btn btn-success" href="{% url 'job:approve' s.user.id j.id %}" >Approve Applicant </a></p>
+								{% endif %}
+								 
+				 			</div>
+				 			<div class="downlaoad-cv">
+				 				<a href="#" title=""><i class="la la-dowanload"></i></a>
+				 			</div>
+				 		</div>
+				 		<ul class="cand-extralink">
+				 			
+				 			<li><a href="#education" title="">Education</a></li>
+				 			<li><a href="#experience" title="">Work Experience</a></li>
+				 			
+                             <li><a href="#skills" title="">Professional Skills</a></li>
+                            
+				 			
+				 		</ul>
+				 		<div class="cand-details-sec">
+				 			<div class="row">
+				 				<div class="col-lg-12 column">
+				 					<div class="cand-details" id="education">
+
+
+                                          
+
+
+
+
+
+
+											
+
+				 						<div class="edu-history-sec" id="">
+											 <h2>Education</h2>
+											 
+											 {% for e in edu %}
+				 							<div class="edu-history">
+				 								<i class="la la-graduation-cap"></i>
+				 								<div class="edu-hisinfo">
+														<h3>{{e.level}}</h3>
+														<i>{{e.from_date }} - {{e.end_date}}</i>
+														<span>{{e.title}} <i></i></span>
+				 								</div>
+											 </div>
+											 {% endfor %}
+				 							
+										 </div>
+
+										
+										 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+				 						<div class="edu-history-sec" id="experience">
+											 <h2>Work & Experience</h2>
+											 
+											 {% for w in work %}
+
+
+								
+							
+									 <div class="edu-history style2">
+										 <i></i>
+										 <div class="edu-hisinfo">
+											 <h3>{{w.title}} <span>{{w.company}} </span></h3>
+											 <i>{{w.from_date}}  - {{w.end_date}} </i>
+											 <p>{{w.description}} </p>
+										 </div>
+									
+									 </div>
+									
+							
+								{% endfor %}
+
+							</div>
+
+				 						
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+				 						<div class="progress-sec" id="skills">
+
+
+												<h2>Professional Skills</h2>
+												{% for p in pro %}
+												<div class="progress-sec">
+													<span>{{p.title}} </span>
+													<div class="progressbar"> <div class="progress" style="width: {{p.percent}}%;"><span>{{p.percent}}%</span></div> </div>
+													
+												</div>
+											  {% endfor %}
+
+				 							
+				 							
+										 </div>
+										 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                       
+
+
+
+                                         <h2><a href="{{a.cover.url}}">Download Cover Letter</a></h2>
+
+                                         <h2><a href="{{a.academic.url}}" title="">Download Academic Documents</a></h2>
+
+                                         <h2><a href="{{a.rec.url}}" title="">Download Recomendation</a></h2>
+
+				 					
+				 						
+				 					</div>
+				 				</div>
+				 				
+				 			</div>
+				 		</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+    {% endblock content %}

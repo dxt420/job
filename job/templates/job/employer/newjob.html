@@ -1,0 +1,285 @@
+{% extends 'job/employer/base.html' %}
+{% load static %}
+
+{% block content %}
+<section class="overlape">
+		<div class="block no-padding">
+			<div data-velocity="-.1" style="background: url(/static/job/images/resource/mslider1.jpg) repeat scroll 50% 422.28px transparent;" class="parallax scrolly-invisible no-parallax"></div><!-- PARALLAX BACKGROUND IMAGE -->
+			<div class="container fluid">
+				<div class="row">
+					<div class="col-lg-12">
+						<div class="inner-header">
+							<h3>Post a New Job</h3>
+
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+
+	<section>
+		<div class="block no-padding">
+			<div class="container">
+				 <div class="row no-gape">
+				 	
+				 	<div class="col-lg-12 column">
+				 		<div class="padding-left">
+					 		<div class="profile-title">
+					 			<div class="steps-sec">
+					 				<div class="step active">
+					 				
+					 				</div>
+					 				<div class="step">
+					 			
+					 				</div>
+					 				<div class="step">
+					 					
+					 				</div>
+					 			</div>
+					 		</div>
+					 		<div class="profile-form-edit">
+								 <form method="POST" action={% url 'job:newjob' %} enctype="multipart/form-data">
+									{% csrf_token %}
+
+					 				<div class="row">
+					 					<div class="col-lg-4">
+					 						<span class="pf-title">Job Title</span>
+					 						<div class="pf-field">
+					 							<input type="text" name="title" placeholder=" " />
+					 						</div>
+					 					</div>
+					 					<div class="col-lg-8">
+					 						<span class="pf-title">Description</span>
+					 						<div class="pf-field">
+					 							<textarea  name="description"></textarea>
+					 						</div>
+					 					</div>
+					 					<div class="col-lg-4">
+					 						<span class="pf-title">Email</span>
+					 						<div class="pf-field">
+					 							<input  name="email" type="email" />
+					 						</div>
+										 </div>
+										 <div class="col-lg-4">
+											<span class="pf-title">Phone Contact</span>
+											<div class="pf-field">
+												<input name="phone" type="text" />
+											</div>
+										</div>
+					 					<!-- <div class="col-lg-6">
+					 						<span class="pf-title">Username</span>
+					 						<div class="pf-field">
+					 							<input type="text" />
+					 						</div>
+					 					</div> -->
+					 					<div class="col-lg-4">
+					 						<span class="pf-title">Job Type</span>
+					 						<div class="pf-field">
+					 							<select name="jobtype" data-placeholder="Please Select Specialism" class="chosen">
+													<option value="Full Time">Full Time</option>
+													<option value="Part Time">Part Time</option>
+												
+												</select>
+					 						</div>
+					 					</div>
+					 					
+					 					<div class="col-lg-4">
+					 						<span class="pf-title">Offered Salary</span>
+					 						<div class="pf-field">
+					 							<select name="offered_salary" data-placeholder="Please Select Specialism" class="chosen">
+													<option value="less than UGX 200,000">less than UGX 200,000</option>
+													<option value="UGX 200,000 - UGX 500,000">UGX 200,000 - UGX 500,000</option>
+													<option value="UGX 500,000 - UGX 1,500,000">UGX 500,000 - UGX 1,500,000</option>
+													<option value="UGX 1,500,000 - UGX 2,500,000">UGX 1,500,000 - UGX 2,500,000</option>
+													<option value="UGX 2,500,000 - UGX 5,000,000">UGX 2,500,000 - UGX 5,000,000</option>
+													<option value="more than  UGX 5,000,000">more than  UGX 5,000,000</option>
+												
+												</select>
+					 						</div>
+					 					</div>
+					 					
+					 					<div class="col-lg-4">
+					 						<span class="pf-title">Experience</span>
+					 						<div class="pf-field">
+					 							<select name="exp" data-placeholder="Please Select Specialism" class="chosen">
+													<option value="less than 1 Year">less than 1 Year</option>
+													<option value="2 - 3 Years">2 - 3 Years</option>
+													<option value="3 - 5 Years">3 - 5 Years</option>
+													<option value="5 - 10 Years">5 - 10 Years</option>
+													<option value="more than 10 Years">more than 10 Years</option>
+												
+												</select>
+					 						</div>
+					 					</div>
+					 					<div class="col-lg-4">
+					 						<span class="pf-title">Gender</span>
+					 						<div class="pf-field">
+					 							<select name="gender" data-placeholder="Please Select Specialism" class="chosen">
+													<option value="Male">Male</option>
+													<option value="Female">Female</option>
+													<option value="All Gender">All Gender</option>
+													
+												</select>
+					 						</div>
+					 					</div>
+					 					<div class="col-lg-4">
+					 						<span class="pf-title">Industry</span>
+					 						<div class="pf-field">
+					 							<select name="jobindustry" data-placeholder="Please Select Specialism" class="chosen">
+													<option value="Accountancy">Accountancy</option>
+													<option value="Banking">Banking</option>
+													<option value="Charity & Voluntary">Charity & Voluntary</option>
+													<option value="Digital & Creative">Digital & Creative</option>
+													<option value="Estate Agency">Estate Agency</option>
+													<option value="Graduate">Graduate</option>
+													<option value="I.T">I.T</option>
+													<option value="Construction">Contruction</option>
+													<option value="Law Firm">Law Firm</option>
+													<option value="Nursing and Midwifrey">Nursing and Midwifrey</option>
+
+												</select>
+					 						</div>
+					 					</div>
+					 					<div class="col-lg-4">
+					 						<span class="pf-title">Qualification</span>
+					 						<div   class="pf-field">
+					 							<select name="qualification" data-placeholder="Please Select Specialism" class="chosen">
+													<option value="Intern">Intern </option>
+													<option value="Intern">Graduate</option>
+													
+												</select>
+					 						</div>
+					 					</div>
+					 					<div class="col-lg-4">
+					 						<span class="pf-title">Application Deadline Date</span>
+					 						<div class="pf-field">
+					 							<input name="deadline" type="text" placeholder="01.11.2019"  class="form-control datepicker" />
+					 						</div>
+					 					</div>
+					 					<!-- <div class="col-lg-12">
+					 						<span class="pf-title">Skill Requirments</span>
+					 						<div class="pf-field">
+						 						<ul class="tags">
+										           <li class="addedTag">Photoshop<span onclick="$(this).parent().remove();" class="tagRemove">x</span><input type="hidden" name="tags[]" value="Web Deisgn"></li>
+							            			<li class="tagAdd taglist">  
+							              				 <input type="text" id="search-field">
+										            </li>
+												</ul>
+											</div>
+					 					</div> -->
+					 					
+					 					<div class="col-lg-4">
+					 						<span class="pf-title">City</span>
+					 						<div class="pf-field">
+												<input name="city" type="text" placeholder="Type City Name"  class="form-control" />
+											</div>
+					 					</div>
+
+										 <div class="col-lg-4">
+					 						<span class="pf-title">Shortlist Limit</span>
+					 						<div class="pf-field">
+												<input name="people" type="number" placeholder="How many people needed for the interview?" required class="form-control" />
+											</div>
+					 					</div>
+
+
+					 					<div class="col-lg-4">
+					 						<span class="pf-title">Complete Address</span>
+					 						<div class="pf-field">
+					 							<textarea name="address"></textarea>
+					 						</div>
+										 </div>
+
+
+										 <div class="col-lg-12">
+												<span class="pf-title">Required Knowledge, Skills, and Abilities</span>
+												<div class="pf-field">
+													<textarea  name="skills2"></textarea>
+												</div>
+											</div>
+
+											<div class="col-lg-12">
+													<span class="pf-title">Education + Experience</span>
+													<div class="pf-field">
+														<textarea  name="exp2"></textarea>
+													</div>
+												</div>
+										
+										 
+										 <div class="col-lg-12">
+											<button type="submit">Post</button>
+										</div>
+
+					 				</div>
+					 			</form>
+					 		</div>
+					 		<div class="contact-edit">
+					 				<div class="row">
+					 				
+					 					
+					 				</div>
+					 		</div>
+					 	</div>
+					</div>
+				 </div>
+			</div>
+		</div>
+	</section>
+
+
+	<script>
+			function toggle() {
+				document.getElementById("ace").style.display = "";
+				document.getElementById("ace2").style.display = "none";
+	
+			}
+			function togglex() {
+				document.getElementById("ace2").style.display = "";
+				document.getElementById("ace").style.display = "none";
+	
+			}
+			function toggle2() {
+				document.getElementById("ace3").style.display = "";
+				document.getElementById("ace1").style.display = "none";
+	
+			}
+			function togglex2() {
+				document.getElementById("ace1").style.display = "";
+				document.getElementById("ace3").style.display = "none";
+	
+			}
+			function toggle3() {
+				document.getElementById("ace5").style.display = "";
+				document.getElementById("ace4").style.display = "none";
+	
+			}
+			function togglex3() {
+				document.getElementById("ace4").style.display = "";
+				document.getElementById("ace5").style.display = "none";
+	
+			}
+			function toggle4() {
+				document.getElementById("ace6").style.display = "";
+				document.getElementById("ace7").style.display = "none";
+	
+			}
+			function togglex4() {
+				document.getElementById("ace7").style.display = "";
+				document.getElementById("ace6").style.display = "none";
+	
+			}
+			function toggle5() {
+				document.getElementById("ace8").style.display = "";
+				document.getElementById("ace9").style.display = "none";
+	
+			}
+			function togglex5() {
+				document.getElementById("ace9").style.display = "";
+				document.getElementById("ace8").style.display = "none";
+	
+			}
+		</script>
+    {% endblock content %}
+

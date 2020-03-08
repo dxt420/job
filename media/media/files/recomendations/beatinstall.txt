@@ -1,0 +1,11 @@
+python
+pip install -r requirements.txt                             #(Django,Pillow,psycopg2,PyPDF2,pytz,schedule,substring)
+
+___ delete migrations files except _init_ + pycache folder___
+___delete sqlite file in the job folder____
+
+python manage.py makemigrations
+pyhton manage.py migrate
+python manage.py createsupersuer
+
+python manage.py runserver

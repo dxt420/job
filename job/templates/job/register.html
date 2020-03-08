@@ -1,0 +1,186 @@
+{% load static %}
+
+
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>BeatoJobs</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="">
+	<meta name="keywords" content="">
+	<meta name="author" content="CreativeLayers">
+
+	<!-- Styles -->
+	<link rel="stylesheet" type="text/css" href="{% static 'job/css/bootstrap-grid.css' %}' %}" />
+	<link rel="stylesheet" href="{% static 'job/css/icons.css' %}">
+	<link rel="stylesheet" href="{% static 'job/css/animate.min.css' %}">
+	<link rel="stylesheet" type="text/css" href="{% static 'job/css/style.css' %}" />
+	<link rel="stylesheet" type="text/css" href="{% static 'job/css/responsive.css' %}" />
+	<link rel="stylesheet" type="text/css" href="{% static 'job/css/chosen.css' %}" />
+	<link rel="stylesheet" type="text/css" href="{% static 'job/css/colors/colors.css' %}" />
+	<link rel="stylesheet" type="text/css" href="{% static 'job/css/bootstrap.css' %}" />
+	<!-- <link rel="stylesheet" type="text/css" href="{% static 'job/css/neon.css' %}" /> -->
+	<link rel="stylesheet" type="text/css" href="{% static 'job/css/neon-forms.css' %}" />
+
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css' %}" />
+	
+</head>
+<body>
+
+
+
+<div class="theme-layout" id="scrollup">
+
+
+	<section>
+		<div class="block no-padding  gray">
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-12">
+						<div class="inner2">
+							<div class="inner-title2">
+								<h3>Register</h3>
+								<span>Keep up to date with the latest news</span>
+							</div>
+
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section>
+		<div class="block remove-bottom">
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-12">
+						<div class="account-popup-area signup-popup-box static">
+							<div class="account-popup">
+								<h3>Sign Up</h3>
+								<span>Welcome and sign up here with your full details, so as to access the best of our services</span>
+								
+								<form action="" method="post" enctype="multipart/form-data">
+									{% csrf_token %}
+									        {{form.errors}}
+									<div class="cfield">
+											<input type="text" name="username" placeholder="Username" />
+											<i class="la la-user"></i>
+										</div>
+										<div class="cfield">
+												<input type="text" name="email" placeholder="Email" />
+												<i class="la la-envelope-o"></i>
+											</div>
+										<div style="display:none" class="cfield">
+												<input type="hidden" type="text" name="first_name" value="Null"/>
+												<i class="la la-user"></i>
+											</div>
+											<div style="display:none" class="cfield">
+													<input type="hidden" type="text" name="last_name" value="Null" />
+													<i class="la la-user"></i>
+												</div>
+												<div class="cfield">
+														<input type="text" name="title" placeholder="Company Name" />
+														<i class="la la-user"></i>
+													</div>
+										<div class="cfield">
+											<input type="password" name="password1" placeholder="********" />
+											<i class="la la-key"></i>
+										</div>
+										<div class="cfield">
+												<input type="password" name="password2" placeholder="Confirm Password " />
+												<i class="la la-key"></i>
+											</div>
+
+
+											
+										
+										<!-- <div class="dropdown-field">
+											<select data-placeholder="Please Select Specialism" class="chosen">
+												<option>Web Development</option>
+												<option>Web Designing</option>
+												<option>Art & Culture</option>
+												<option>Reading & Writing</option>
+											</select>
+										</div> -->
+										<div class="cfield">
+											<input type="text"  name="phone" placeholder="Phone Number" />
+											<i class="la la-phone"></i>
+										</div>
+										<div class="cfield">
+												<!-- <div class="fileinput-new thumbnail" style="width: 200px; height: 200px;"
+															data-trigger="fileinput">
+															<img src="http://placehold.it/256x256" alt="...">
+														</div>
+														<div class="fileinput-preview fileinput-exists thumbnail" style="max-width: 200px; max-height: 200px"></div>
+														<div>
+															<span class="btn btn-white btn-file">
+																<span class="fileinput-new">Select Image</span>
+																<span class="fileinput-exists">Change</span>
+																<input type="file" name="usericon" accept="image/*">
+															</span>
+															<a href="#" class="btn btn-orange fileinput-exists" data-dismiss="fileinput">
+																Remove </a>
+														</div> -->
+														Upload Logo
+														<input type="file" name="logo"  accept="image/*">
+
+												<i class="la la-key"></i>
+											</div>
+									
+			
+										<button type="submit">Signup</button>
+									</form>
+							</div>
+						</div><!-- SIGNUP POPUP -->
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+
+</div>
+
+<div class="account-popup-area signin-popup-box">
+	<div class="account-popup">
+		<span class="close-popup"><i class="la la-close"></i></span>
+		<h3>User Login</h3>
+		<span>Click To Login With Demo User</span>
+		<div class="select-user">
+			<span>Candidate</span>
+			<span>Employer</span>
+		</div>
+		<form>
+			<div class="cfield">
+				<input type="text" placeholder="Username" />
+				<i class="la la-user"></i>
+			</div>
+			<div class="cfield">
+				<input type="password" placeholder="********" />
+				<i class="la la-key"></i>
+			</div>
+			<p class="remember-label">
+				<input type="checkbox" name="cb" id="cb1"><label for="cb1">Remember me</label>
+			</p>
+			<a href="#" title="">Forgot Password?</a>
+			<button type="submit">Login</button>
+		</form>
+		<div class="extra-login">
+			<span>Or</span>
+			<div class="login-social">
+				<a class="fb-login" href="#" title=""><i class="fa fa-facebook"></i></a>
+				<a class="tw-login" href="#" title=""><i class="fa fa-twitter"></i></a>
+			</div>
+		</div>
+	</div>
+</div><!-- LOGIN POPUP -->
+
+
+<script src="{% static 'job/js/fileinput.js' %}" type="text/javascript"></script>
+
+
+</body>
+</html>
+

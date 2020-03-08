@@ -1,0 +1,127 @@
+           #########python from scratch########
+
+go to http://www.django.org or www.django.org/downloads/
+download, intall and run it.
+
+create a folder mypro in the python's folder
+c:\songa\>c:\mypro
+creating project dir:
+c:\mypro>django-admin startproject myapp
+c:\mypro>cd myapp
+c:\mypro>cd myapp>manage.py runserver
+
+settings.py dir: open and check the db or may be change to the one u wana use.
+cmd:
+c:\mypro>cd myapp>manage.py syncdb
+create superuser? yes
+user: admin
+email asdress: songa@gmail.com
+password: ********
+c:\mypro>cd myapp>manage.py runserver
+copy and paste url the append /admin/
+enter the username and the password u had created in the cmd.
+
+creating app dir:
+c:\mypro>cd myapp>manage.py startapp calc
+
+module.py dir:
+class calc(modules.module):
+	name = modules.charfield(max_lenght=10)
+	tel = modules.charfield(max-lenght=10)
+
+def self __unicode__(self):
+	return self.name+"<br>"+self.tel+"<br><br><hr>"
+save and close file.
+
+go to settings, enter at the end of the installed apps
+'calc', save and close the file.
+
+cmd:
+c:\mypro>cd myapp>manage.py sql calc
+this has created a table in sqlite with three columns id as pk, name and tel.
+c:\mypro>cd myapp>manage.py syncdb
+to finish table creation
+c:\mypro>cd myapp>manage.py runserver
+
+
+the enter address +/admin/ and login
+but any appears for now.
+
+stop seerver:
+ccntrl+C
+clear screen
+c:\mypro>cd myapp>cls
+modify admin.py by adding :
+from django.contrib import admin
+add:
+from calc.modules import calc
+
+then register it:
+
+admin.site.register(calc)
+save and close.
+to register your module
+
+c:\mypro>cd myapp>manage.py runserver
+then login to admin
+you can now click on calc btn add and save then add another or just save or save and edit.
+then you can click on a calc then select to delete selected, then click home to view your actions.
+
+view connection
+first add like three records into the table the stop server and clear.
+
+url.py;
+modify code by
+
+from calc import views
+
+then add
+
+url(r'^$', views.home, name='home'),
+save and close.
+
+view.py:
+
+modify code by
+from django.http import HttpResponse
+from calc.modules import calc
+
+def home(request):
+	calcDisp = calc.object.all()
+	return HttpResponse(calcDisp)
+save and close file.
+
+cmd:
+c:\mypro>cd myapp>manage.py runserver
+copy url and paste on the browser to view the records from the database
+
+
+create new html file and save in python-2.7.0-lib-site-package-django-admin-template
+
+html file:
+
+<h1> Calculator</h1>
+
+{% if calcDisp %}
+	<p>
+		{% for items in calcDisp %}
+			{{%item.name}},{{%item.tel%}} 
+	</p>
+{%else%}
+	<p>There is no calls in the callbox</p>
+{%endif%}
+
+
+modify views.py again
+
+from django.template import context, loaders
+
+then add
+def home(request)
+	calcDisp = calc.object.all()
+	a = loader.get_template('home.html')
+	b = context({'calcDisp',:calcDisp})
+	return HttpResponse(a.render(b))
+
+run the server.
+then, check the display from the browser  by entering the url.

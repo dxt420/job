@@ -1,0 +1,128 @@
+{% extends 'job/employer/base.html' %}
+{% load static %}
+
+{% block content %}
+
+	<section class="overlape">
+		<div class="block no-padding">
+			<div data-velocity="-.1" style="background: url(images/resource/mslider1.jpg) repeat scroll 50% 422.28px transparent;" class="parallax scrolly-invisible no-parallax"></div><!-- PARALLAX BACKGROUND IMAGE -->
+			<div class="container fluid">
+				<div class="row">
+					<div class="col-lg-12">
+						<div class="inner-header">
+								<h3>Welcome {{company.title}}</h3>
+							</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section>
+		<div class="block no-padding">
+			<div class="container">
+				 <div class="row no-gape">
+				 	
+				 	<div class="col-lg-12 column">
+				 		<div class="padding-left">
+					 		<div class="profile-title" id="mp">
+					 			<h3>My Profile</h3>
+					 			<!-- <div class="upload-img-bar">
+					 				<span><img src="images/resource/up1.jpg" alt="" /><i>x</i></span>
+					 				<div class="upload-info">
+					 					<a href="#" title="">Browse</a>
+					 					<span>Max file size is 1MB, Minimum dimension: 270x210 And Suitable files are .jpg & .png</span>
+					 				</div>
+					 			</div> -->
+					 			
+					 		</div>
+					 		<div class="profile-form-edit">
+								<form method="POST" action={% url 'job:profile2' %} enctype="multipart/form-data">
+									{% csrf_token %}
+					 				<div class="row">
+					 					<div class="col-lg-6">
+					 						<span class="pf-title">Company Name</span>
+					 						<div class="pf-field">
+					 							<input type="text" name="title" value="{{company.title  }}" />
+					 						</div>
+					 					</div>
+					 					
+					 					<div class="col-lg-3">
+					 						<span class="pf-title">Since</span>
+					 						<div class="pf-field">
+					 							<input type="text" name="since" value="{{company.since  }}" />
+					 						</div>
+					 					</div>
+					 					<div class="col-lg-3">
+					 						<span class="pf-title">Team Size</span>
+					 						<div class="pf-field">
+												 <input type="text" name="team" value="{{company.team  }}" />
+					 						</div>
+										 </div>
+										 
+										 <div class="col-lg-3">
+												<span class="pf-title">Logo</span>
+												<div class="pf-field">
+														<img width="200px" src="{{company.logo.url }}" alt="" />
+													
+														<input type="file" name="logo"  accept="image/*">
+													</div>
+													<span class="pf-title">Change Logo</span>
+											</div>
+					 					
+					 					<div class="col-lg-9">
+					 						<span class="pf-title">Description</span>
+					 						<div class="pf-field">
+					 							<textarea name="description">{{company.description  }}</textarea>
+					 						</div>
+                                         </div>
+                                         
+					 					
+                                     </div>
+                                     <h3>Contact</h3>
+					 				<div class="row">
+					 					<div class="col-lg-4">
+					 						<span class="pf-title">Phone Number</span>
+					 						<div class="pf-field">
+					 							<input type="text" name="phone" value="{{company.phone  }}" />
+					 						</div>
+					 					</div>
+					 					<div class="col-lg-4">
+					 						<span class="pf-title">Email</span>
+					 						<div class="pf-field">
+					 							<input type="text" name="email" value="{{company.email  }}" />
+					 						</div>
+					 					</div>
+					 					<div class="col-lg-4">
+					 						<span class="pf-title">Website</span>
+					 						<div class="pf-field">
+					 							<input type="text" name="website" value="{{company.website  }}" />
+					 						</div>
+					 					</div>
+					 				
+					 					<div class="col-lg-6">
+					 						<span class="pf-title">Complete Address</span>
+					 						<div class="pf-field">
+													<textarea name="address">{{company.address  }}</textarea>
+					 							
+					 						</div>
+					 					</div>
+					 				
+					 					<div class="col-lg-12">
+					 						<button type="submit">Update</button>
+					 					</div>
+					 				</div>
+					 			</form>
+					 		</div>
+					 		
+					 		<div class="contact-edit" id="ci">
+					 		
+					 	
+					 		</div>
+					 	</div>
+					</div>
+				 </div>
+			</div>
+		</div>
+	</section>
+    {% endblock content %}
